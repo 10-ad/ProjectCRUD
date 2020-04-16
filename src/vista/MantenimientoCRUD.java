@@ -28,7 +28,7 @@ public void conectarOracle() throws SQLException{//inicia metodo conectar
         DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
         cn = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:XE","system","admin"); //conexion a la base SQL
         stmt=cn.createStatement();
-        JOptionPane.showMessageDialog(null, "Prueba de conexion \nOK Hernández");
+        JOptionPane.showMessageDialog(null, "Prueba de conexion \nOK ");
     }//termina metodo conectar
    
     @SuppressWarnings("unchecked")
@@ -325,7 +325,7 @@ public void conectarOracle() throws SQLException{//inicia metodo conectar
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//Modulo de insercion a la base de datos
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
         // TODO add your handling code here:
         String altaRegistro="";
@@ -335,7 +335,7 @@ public void conectarOracle() throws SQLException{//inicia metodo conectar
             String usuario=this.txtUsuario.getText();
             String pass=this.txtPass.getText();
             
-altaRegistro="INSERT INTO USUARIOS2004 VALUES ('"+idUsuario+"','"+usuario+"','"+pass+"')";   
+altaRegistro="INSERT INTO USUARIOS2004 VALUES ('"+idUsuario+"','"+usuario+"','"+pass+"')";  
         stmt.executeUpdate(altaRegistro);
   JOptionPane.showMessageDialog(null,"Se inserto el registro de forma exitosa\n"
                                       + "\nId Usuario : "+idUsuario
