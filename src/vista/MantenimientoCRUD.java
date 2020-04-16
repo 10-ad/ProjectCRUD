@@ -1,5 +1,5 @@
 package vista;
-//librerias
+//librerias las primeras son para base de datos
 import java.sql.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -26,7 +26,7 @@ public class MantenimientoCRUD extends javax.swing.JFrame {
     }
 public void conectarOracle() throws SQLException{//inicia metodo conectar
         DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-        cn = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:XE","system","admin");
+        cn = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:XE","system","admin"); //conexion a la base SQL
         stmt=cn.createStatement();
         JOptionPane.showMessageDialog(null, "Prueba de conexion \nOK Hernández");
     }//termina metodo conectar
